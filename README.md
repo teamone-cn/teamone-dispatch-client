@@ -17,7 +17,7 @@
 ## 安装
 
 ````shell
-composer require teamone/azkaban-client
+composer require teamone/teamone-dispatch-client
 ````
 
 ## 接入指南
@@ -51,10 +51,6 @@ $config = [
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-
-use Teamone\Azkaban\Builder\GatewayBuilder;
-use Teamone\Azkaban\Builder\GuzzleClientBuilder;
-use Teamone\Azkaban\Builder\GuzzleClientBuilderImpl;
 
 $config = [
     // Azkaban 服务器地址
@@ -191,14 +187,6 @@ dump($trace);
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-
-use GuzzleHttp\Exception\RequestException;
-use Teamone\Azkaban\Builder\GuzzleClientBuilder;
-use Teamone\Azkaban\ConvertUtil;
-use Teamone\Azkaban\Exceptions\TeamoneAzkabanException;
-use Teamone\Azkaban\Gateway\AuthGateway;
-use Teamone\Azkaban\Gateway\GatewayRequest;
-use Teamone\Azkaban\GuzzleClient;
 
 class MyGuzzleClientBuilder implements GuzzleClientBuilder
 {
