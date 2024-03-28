@@ -1,0 +1,221 @@
+{
+  "fetchUserProjects": {
+    "projects": [
+      {
+        "projectId": 1,
+        "projectName": "http-test",
+        "createdBy": "azkaban",
+        "createdTime": 1710213753753,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 2,
+        "projectName": "testtest",
+        "createdBy": "azkaban",
+        "createdTime": 1710214011704,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 5,
+        "projectName": "zxj-test",
+        "createdBy": "azkaban",
+        "createdTime": 1710311617067,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 6,
+        "projectName": "init-test",
+        "createdBy": "azkaban",
+        "createdTime": 1710727089881,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 7,
+        "projectName": "test-project-title-0320-1455",
+        "createdBy": "azkaban",
+        "createdTime": 1710918359181,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 8,
+        "projectName": "curl-test",
+        "createdBy": "azkaban",
+        "createdTime": 1711358985728,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 9,
+        "projectName": "project-1826",
+        "createdBy": "azkaban",
+        "createdTime": 1711362388807,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 10,
+        "projectName": "test-project-03251613-v2",
+        "createdBy": "azkaban",
+        "createdTime": 1711362944070,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      },
+      {
+        "projectId": 11,
+        "projectName": "test-project-0325-1836",
+        "createdBy": "azkaban",
+        "createdTime": 1711363227808,
+        "userPermissions": [
+          {
+            "first": "azkaban",
+            "second": {
+              "types": [
+                "ADMIN"
+              ]
+            }
+          }
+        ],
+        "groupPermissions": []
+      }
+    ]
+  },
+  "createProject": {
+    "path": "manager?project=test-project-0325-1844",
+    "action": "redirect",
+    "status": "success"
+  },
+  "initProject": {
+    "projectId": "12",
+    "version": "1"
+  },
+  "addFlowInCurrentProject": {
+    "projectId": 12,
+    "project": "test-project-0325-1844"
+  },
+  "addJobInCurrentFlow": {
+    "projectId": 12,
+    "project": "test-project-0325-1844"
+  },
+  "executeFlow": {
+    "project": "test-project-0325-1844",
+    "message": "Execution queued successfully with exec id 129",
+    "flow": "test-project-0325-1844-flow",
+    "execid": 129
+  },
+  "fetchJobInfo": {
+    "jobName": "test-project-0325-1844-flow-job",
+    "generalParams": [],
+    "project": "test-project-0325-1844",
+    "jobType": null,
+    "projectId": 12,
+    "overrideParams": {
+      "type": "command",
+      "command": "ls -alh \/tmp"
+    }
+  },
+  "fetchProjectFlows": {
+    "projectId": 12,
+    "project": "test-project-0325-1844",
+    "flows": [
+      {
+        "flowId": "init"
+      },
+      {
+        "flowId": "test-project-0325-1844-flow"
+      }
+    ]
+  },
+  "fetchFlowGraph": {
+    "nodes": [
+      {
+        "id": "init",
+        "type": "noop"
+      },
+      {
+        "id": "test-project-0325-1844-flow-job",
+        "type": "command"
+      }
+    ],
+    "project": "test-project-0325-1844",
+    "projectId": 12,
+    "flow": "test-project-0325-1844-flow"
+  }
+}
+{"fetchUserProjects":{"projects":[{"projectId":1,"projectName":"http-test","createdBy":"azkaban","createdTime":1710213753753,"userPermissions":[{"first":"azkaban","second":{"types":["ADMIN"]}}],"groupPermissions":[]},{"projectId":5,"projectName":"zxj-test","createdBy":"azkaban","createdTime":1710311617067,"userPermissions":[{"first":"azkaban","second":{"types":["ADMIN"]}}],"groupPermissions":[]},{"projectId":6,"projectName":"init-test","createdBy":"azkaban","createdTime":1710727089881,"userPermissions":[{"first":"azkaban","second":{"types":["ADMIN"]}}],"groupPermissions":[]},{"projectId":8,"projectName":"curl-test","createdBy":"azkaban","createdTime":1711358985728,"userPermissions":[{"first":"azkaban","second":{"types":["ADMIN"]}}],"groupPermissions":[]}]},"createProject":{"path":"manager?project=test-project-0326-1354","action":"redirect","status":"success"},"initProject":{"projectId":"13","version":"1"},"addFlowInCurrentProject":{"projectId":13,"project":"test-project-0326-1354"},"addJobInCurrentFlow":{"projectId":13,"project":"test-project-0326-1354"},"executeFlow":{"project":"test-project-0326-1354","message":"Execution queued successfully with exec id 131","flow":"test-project-0326-1354-flow","execid":131},"fetchJobInfo":{"jobName":"test-project-0326-1354-flow-job","generalParams":[],"project":"test-project-0326-1354","jobType":null,"projectId":13,"overrideParams":{"type":"command","command":"ls -alh \/"}},"fetchProjectFlows":{"projectId":13,"project":"test-project-0326-1354","flows":[{"flowId":"init"},{"flowId":"test-project-0326-1354-flow"}]},"fetchFlowGraph":{"nodes":[{"id":"init","type":"noop"},{"id":"test-project-0326-1354-flow-job","type":"command"}],"project":"test-project-0326-1354","projectId":13,"flow":"test-project-0326-1354-flow"}}
