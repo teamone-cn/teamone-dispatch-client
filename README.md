@@ -246,5 +246,5 @@ dump($session);
 ## 单元测试
 
 ````shell
-./vendor/bin/phpunit ./test/RequestTest.php --filter testLogin$
+./vendor/bin/phpunit ./test/JobGatewayTest.php --filter testFetchFlowExecutions$
 ````

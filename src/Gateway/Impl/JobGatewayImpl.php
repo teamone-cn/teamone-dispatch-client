@@ -542,4 +542,59 @@ class JobGatewayImpl extends GatewayRequest implements JobGateway
         }
     }
 
+    /**
+     * @desc Fetch Executions of a Flow
+     * 给定项目名称和某个流程后，该 API 调用会提供相应的执行列表。 这些执行按递交时间顺序排序。此外，还需要参数指定开始索引和列表长度。这原本是用来处理分页的。
+     * @param string $sessionId
+     * @param string $project
+     * @param string $flow
+     * @param int $start
+     * @param int $length
+     * @return array
+     */
+    public function fetchFlowExecutions(string $sessionId, string $project, string $flow, int $start = 0, int $length = 100): array
+    {
+        $valid = true;
+        $json  = [
+            //'ajax=fetchFlowExecutions'
+            'ajax'       => 'fetchFlowExecutions',
+            'session.id' => $sessionId ?? ($valid = null),
+            // The project name to be fetched.
+            'project'    => $project ?? ($valid = null),
+            // The flow id to be fetched.
+            'flow'       => $flow ?? ($valid = null),
+            // The start index(inclusive) of the returned list.
+            'start'      => $start,
+            // The max length of the returned list. For example, if the start index is 2, and the length is 10, then the returned list will include executions of indices: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11].
+            'length'     => $length,
+        ];
+        if (is_null($valid)) {
+            throw new InvalidArgumentException('Arguments Error.');
+        }
+
+        try {
+            $uri      = '/manager?';
+            $response = $this->getGuzzleClient()->query($json)->get($uri);
+            $fields   = [];
+            $contents = AbstractResponseChain::link(
+            // 响应状态码
+                new HttpStatusResponseChain([HttpStatusResponseChain::OK]),
+                // 判断返回类型
+                new ContentTypeResponseChain(),
+                // 转换类型
+                new ConvertArrayResponseChain(),
+                // status=error
+                new ContentStatusResponseChain(),
+                // 含有 error 字段
+                new ContentErrorResponseChain(),
+                // 返回结构
+                new ContentStructureResponseChain($fields),
+            )->handle($response);
+
+            return $contents;
+        } catch (RequestException $e) {
+            throw new TeamoneDispatchClientException($e->getMessage(), 400, $e);
+        }
+    }
+
 }

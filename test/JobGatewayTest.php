@@ -188,4 +188,17 @@ class JobGatewayTest extends AuthGatewayTest
         dump($ret);
         $this->assertTrue(true);
     }
+
+    public function testFetchFlowExecutions()
+    {
+        $project = "teamone_payment";
+        $flow    = "api_app_heartbeat_ping";
+        try {
+            $ret = $this->jobGateway->fetchFlowExecutions($this->sessionId, $project, $flow, 0, 1);
+            dump($ret);
+        } catch (\Exception $e) {
+            dump($e->getMessage());
+        }
+        $this->assertTrue(true);
+    }
 }

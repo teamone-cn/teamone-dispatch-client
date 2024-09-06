@@ -22,4 +22,5 @@ interface JobGateway
 
     public function fetchExecJobLogs(string $sessionId, int $execId, string $jobId, int $offset, int $length): array;
 
+    public function fetchFlowExecutions(string $sessionId, string $project, string $flow, int $start, int $length): array;
 }
